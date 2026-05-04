@@ -122,13 +122,15 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Configure secrets
+4. Set up secrets
+
+Copy the example secrets file:
 
 ```bash
 cp .streamlit/secrets.toml.example .streamlit/secrets.toml
 ```
 
-Edit `.streamlit/secrets.toml` with your actual credentials:
+Open `.streamlit/secrets.toml` and replace the placeholder values with your actual credentials:
 
 ```toml
 OPENAI_API_KEY = "sk-..."
