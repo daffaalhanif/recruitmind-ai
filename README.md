@@ -67,7 +67,7 @@ Multi-step queries are handled via a task_queue in state, allowing sequential ex
 ```
 recruitmind-ai/
 ├── agent/
-│   ├── nodes/          # 9 LangGraph nodes
+│   ├── nodes/          # LangGraph execution nodes
 │   ├── prompts/        # System prompts per node
 │   ├── graph.py        # Graph definition and compilation
 │   └── state.py        # AgentState TypedDict
@@ -76,19 +76,19 @@ recruitmind-ai/
 │   ├── logger.py       # Centralized logging setup
 │   └── main.py         # Streamlit entry point
 ├── pipeline/
-│   ├── 01_preprocess.py
-│   ├── 02_extract.py
-│   ├── 03_ingest_sql.py
-│   └── 04_ingest_vectordb.py
+│   ├── 01_preprocess.py    # HTML stripping and normalization
+│   ├── 02_extract.py       # LLM structured extraction
+│   ├── 03_ingest_sql.py    # SQLite ingestion
+│   └── 04_ingest_vectordb.py  # Qdrant ingestion
 ├── services/
-│   ├── embedding_service.py
-│   ├── qdrant_service.py
-│   ├── reranker_service.py
-│   └── sqlite_service.py
+│   ├── embedding_service.py    # OpenAI embedding wrapper
+│   ├── qdrant_service.py       # Qdrant search wrapper
+│   ├── reranker_service.py     # FlashRank reranker wrapper
+│   └── sqlite_service.py       # SQLite query wrapper
 ├── data/
 │   └── processed/      # CSV files committed to repo
-├── config.py
-└── requirements.txt
+├── config.py           # System-wide constants
+└── requirements.txt    # Pinned dependencies
 ```
 
 ## Setup
